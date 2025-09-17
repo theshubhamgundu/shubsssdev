@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'screens/sign_in_screen.dart';
+import 'screens/sign_up_screen.dart';
 
 void main() {
   runApp(FindMyEventApp());
@@ -393,8 +395,23 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                       } else {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) => InterestSelectionScreen()),
+                          MaterialPageRoute(builder: (context) => SignInScreen()),
                         );
+// Ensure SignInScreen allows navigation to SignUpScreen and vice versa
+// Example for SignInScreen:
+// ElevatedButton(
+//   onPressed: () {
+//     Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+//   },
+//   child: Text('Sign Up'),
+// )
+// Example for SignUpScreen:
+// ElevatedButton(
+//   onPressed: () {
+//     Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+//   },
+//   child: Text('Sign In'),
+// )
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -511,12 +528,12 @@ class _InterestSelectionScreenState extends State<InterestSelectionScreen> {
   List<String> selectedInterests = [];
   
   final List<InterestCategory> eventTypes = [
-    InterestCategory(name: 'Technical', icon: Icons.computer, color: Color(0xFF4A90E2)),
-    InterestCategory(name: 'Cultural', icon: Icons.theater_comedy, color: Color(0xFFE74C3C)),
-    InterestCategory(name: 'Workshops', icon: Icons.build, color: Color(0xFFFF6B35)),
-    InterestCategory(name: 'Seminars', icon: Icons.school, color: Color(0xFF9B59B6)),
-    InterestCategory(name: 'Sports', icon: Icons.sports_soccer, color: Color(0xFF2ECC71)),
-    InterestCategory(name: 'Fest', icon: Icons.celebration, color: Color(0xFFE67E22)),
+  InterestCategory(name: 'Technical', icon: Icons.computer, color: Color(0xFF4A90E2), animationAsset: 'assets/animation_technical.png'),
+  InterestCategory(name: 'Cultural', icon: Icons.theater_comedy, color: Color(0xFFE74C3C), animationAsset: 'assets/animation_cultural.png'),
+  InterestCategory(name: 'Workshops', icon: Icons.build, color: Color(0xFFFF6B35), animationAsset: 'assets/animation_workshops.png'),
+  InterestCategory(name: 'Seminars', icon: Icons.school, color: Color(0xFF9B59B6), animationAsset: 'assets/animation_seminars.png'),
+  InterestCategory(name: 'Sports', icon: Icons.sports_soccer, color: Color(0xFF2ECC71), animationAsset: 'assets/animation_sports.png'),
+  InterestCategory(name: 'Fest', icon: Icons.celebration, color: Color(0xFFE67E22), animationAsset: 'assets/animation_fest.png'),
   ];
 
   @override
@@ -857,10 +874,12 @@ class InterestCategory {
   final String name;
   final IconData icon;
   final Color color;
+  final String? animationAsset;
 
   InterestCategory({
     required this.name,
     required this.icon,
     required this.color,
+    this.animationAsset,
   });
 }

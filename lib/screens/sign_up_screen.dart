@@ -1,3 +1,5 @@
+import 'sign_in_screen.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -75,7 +77,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // TODO: Add account creation logic here
+                      // Demo interests for quick signup
+                      List<String> demoInterests = [
+                        'Technical', 'Cultural', 'Workshops', 'Seminars', 'Sports', 'Fest'
+                      ];
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(selectedInterests: demoInterests),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFFF6B35),
                       padding: EdgeInsets.symmetric(vertical: 16),
@@ -126,7 +140,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     Text('Already have an account? '),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+                      },
                       child: Text('Sign in', style: TextStyle(color: Color(0xFFFF6B35), fontWeight: FontWeight.bold)),
                     ),
                   ],
