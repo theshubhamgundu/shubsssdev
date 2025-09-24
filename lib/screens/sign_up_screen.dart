@@ -79,14 +79,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       // TODO: Add account creation logic here
-                      // Demo interests for quick signup
-                      List<String> demoInterests = [
-                        'Technical', 'Cultural', 'Workshops', 'Seminars', 'Sports', 'Fest'
-                      ];
+                      // After signup, redirect to interest selection
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomeScreen(selectedInterests: demoInterests),
+                          builder: (context) => InterestSelectionScreen(),
                         ),
                       );
                     },

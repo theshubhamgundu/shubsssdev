@@ -528,12 +528,12 @@ class _InterestSelectionScreenState extends State<InterestSelectionScreen> {
   List<String> selectedInterests = [];
   
   final List<InterestCategory> eventTypes = [
-  InterestCategory(name: 'Technical', icon: Icons.computer, color: Color(0xFF4A90E2), animationAsset: 'assets/animation_technical.png'),
-  InterestCategory(name: 'Cultural', icon: Icons.theater_comedy, color: Color(0xFFE74C3C), animationAsset: 'assets/animation_cultural.png'),
-  InterestCategory(name: 'Workshops', icon: Icons.build, color: Color(0xFFFF6B35), animationAsset: 'assets/animation_workshops.png'),
-  InterestCategory(name: 'Seminars', icon: Icons.school, color: Color(0xFF9B59B6), animationAsset: 'assets/animation_seminars.png'),
-  InterestCategory(name: 'Sports', icon: Icons.sports_soccer, color: Color(0xFF2ECC71), animationAsset: 'assets/animation_sports.png'),
-  InterestCategory(name: 'Fest', icon: Icons.celebration, color: Color(0xFFE67E22), animationAsset: 'assets/animation_fest.png'),
+  InterestCategory(name: 'Technical', icon: Icons.computer, color: Color(0xFF4A90E2), animationAsset: 'assets/animation_technical.gif'),
+  InterestCategory(name: 'Cultural', icon: Icons.theater_comedy, color: Color(0xFFE74C3C), animationAsset: 'assets/animation_cultural.gif'),
+  InterestCategory(name: 'Workshops', icon: Icons.build, color: Color(0xFFFF6B35), animationAsset: 'assets/animation_workshop.gif'),
+  InterestCategory(name: 'Seminars', icon: Icons.school, color: Color(0xFF9B59B6), animationAsset: 'assets/animation_seminar.gif'),
+  InterestCategory(name: 'Sports', icon: Icons.sports_soccer, color: Color(0xFF2ECC71), animationAsset: 'assets/animation_sports.gif'),
+  InterestCategory(name: 'Fest', icon: Icons.celebration, color: Color(0xFFE67E22), animationAsset: 'assets/animation_fest.gif'),
   ];
 
   @override
